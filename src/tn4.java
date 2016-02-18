@@ -1,7 +1,7 @@
 /**
- * Nom du programme : TN4                                     
- * Fichier : TN4.java                                          
- * @author Maxime Drouin                                      
+ * Nom du programme : TN4 Fichier : TN4.java
+ * 
+ * @author Maxime Drouin
  */
 
 public class tn4 {
@@ -24,7 +24,7 @@ public class tn4 {
 		System.out.println("** Complexité **");
 		System.out
 				.println("*********************************************************************************");
-		System.out.println(sudoku9x9.getComplexite());  
+		System.out.println(sudoku9x9.getComplexite());
 
 		// Effectuer 10 placements
 
@@ -73,11 +73,13 @@ public class tn4 {
 		}
 		;
 
-		// Réinitialise la grille à la grille d'origine (Pas demandé dans description du travail noté)
+		// Réinitialise la grille à la grille d'origine (Pas demandé dans
+		// description du travail noté)
 		sudoku9x9.reInitialiser();
 		System.out
 				.println("\n*********************************************************************************");
-		System.out.println("** EXTRA - Grille de Sudoku après réinitialisation à la grille d'origine **");
+		System.out
+				.println("** EXTRA - Grille de Sudoku après réinitialisation à la grille d'origine **");
 		System.out
 				.println("*********************************************************************************");
 		sudoku9x9.imprimerGrille();

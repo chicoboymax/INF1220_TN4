@@ -1,6 +1,5 @@
 /**
- * Nom du programme : TN4 
- * Fichier : Case.java
+ * Nom du programme : TN4 Fichier : Case.java
  * 
  * @author Maxime Drouin
  */
@@ -31,72 +30,97 @@ public class Case {
 		this.setAncValeur(ancValeur);
 		this.setNouValeur(nouValeur);
 	}
-	
+
 	/*********************************************************************************/
-	/* 
-	 * @return
+	/*
+	 * Getter pour l'ancienne valeur de la case Public, car doit être accessible
+	 * au restant du programme
+	 * 
+	 * @return ancValeur - L'ancienne valeur de la case avant ce placement
 	 */
 	/********************************************************************************/
 	public int getAncValeur() {
 		return ancValeur;
 	}
-	
+
 	/*********************************************************************************/
-	/* 
-	 * @param
+	/*
+	 * Setter pour l'ancienne valeur de la case Public, car doit être accessible
+	 * au restant du programme
+	 * 
+	 * @param ancValeur - L'ancienne valeur de la case avant ce placement
 	 */
 	/********************************************************************************/
 	public void setAncValeur(int ancValeur) {
 		this.ancValeur = ancValeur;
 	}
-	
+
 	/*********************************************************************************/
-	/* 
-	 * @return
+	/*
+	 * Getter pour la nouvelle valeur de la case Public, car doit être
+	 * accessible au restant du programme
+	 * 
+	 * @return nouValeur - La nouvelle valeur de cette case pour le placement
 	 */
 	/********************************************************************************/
 	public int getNouValeur() {
 		return nouValeur;
 	}
-	
+
 	/*********************************************************************************/
-	/* 
-	 * @param
+	/*
+	 * Setter pour la nouvelle valeur de la case Public, car doit être
+	 * accessible au restant du programme
+	 * 
+	 * @param nouValeur - La nouvelle valeur de cette case pour le placement
 	 */
 	/********************************************************************************/
 	public void setNouValeur(int nouValeur) {
 		this.nouValeur = nouValeur;
 	}
-	
+
 	/*********************************************************************************/
-	/* 
-	 * @return
+	/*
+	 * Getter pour le choix de la ligne du Sudoku Public, car doit être
+	 * accessible au restant du programme
+	 * 
+	 * @return row - La ligne dans laquelle se trouve la case
 	 */
 	/********************************************************************************/
 	public int getRow() {
 		return row;
 	}
-	
+
 	/*********************************************************************************/
-	/* 
-	 * @param
+	/*
+	 * Setter pour le choix de la ligne du Sudoku Public, car doit être
+	 * accessible au restant du programme
+	 * 
+	 * @param row - La ligne dans laquelle se trouve la case
 	 */
 	/********************************************************************************/
 	public void setRow(int row) {
 		this.row = row;
 	}
-	
+
 	/*********************************************************************************/
-	/* @return
+	/*
+	 * Getter pour le choix de la colonne du Sudoku Public, car doit être
+	 * accessible au restant du programme
+	 * 
+	 * @return col - La colonne dans laquelle se trouve la case
 	 */
 	/********************************************************************************/
 	public int getCol() {
 		return col;
 	}
-	
+
 	/*********************************************************************************/
-	/* 
-	 * @param
+	/*
+	 * Setter pour le choix de la colonne du Sudoku Public, car doit être
+	 * accessible au restant du programme
+	 * 
+	 * @param col - La colonne dans laquelle se trouve la case
 	 */
 	/********************************************************************************/
 	public void setCol(int col) {

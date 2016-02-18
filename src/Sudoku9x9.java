@@ -34,9 +34,11 @@ public class Sudoku9x9 extends Sudoku {
 	 * validation est différente d'une grille à l'autre.
 	 * 
 	 * Est public, car doit pouvoir être appellée par la classe main.
+	 * 
+	 * @return boolean - Si la grille est valide ou non
 	 */
 	/*********************************************************************************/
-	
+
 	// Override la méthode abstract 'validate' de la superclasse 'Sudoku'
 	@Override
 	public boolean validate() {
