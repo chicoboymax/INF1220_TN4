@@ -25,7 +25,7 @@ public abstract class Sudoku {
 	 * Cette méthode est déclarée dans la superclasse, car elle commune à tous
 	 * les types de Sudoku.
 	 * 
-	 * @param n - La taille du Sudoku
+	 * @param taille - La taille du Sudoku
 	 * 
 	 * @param lesPlacements - Les placemments restants à placer dans la grille
 	 * 
