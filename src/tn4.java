@@ -10,7 +10,7 @@ public class tn4 {
 
 		// Créer une instance de la classe Sudoku9x9
 		Sudoku9x9 sudoku9x9 = new Sudoku9x9(0, 0);
-		// Imprimer la grille de Sudoku d'origine;
+		// Imprimer la grille de Sudoku d'origine
 		System.out
 				.println("\n*********************************************************************************");
 		System.out.println("** Grille de Sudoku d'origine **");
@@ -66,12 +66,7 @@ public class tn4 {
 		System.out.println("** Validation de la grille de Sudoku **");
 		System.out
 				.println("*********************************************************************************");
-		if (sudoku9x9.validate()) {
-			System.out.println("La grille est valide !\n");
-		} else {
-			System.out.println("La grille est invalide !\n");
-		}
-		;
+		sudoku9x9.validateGrid();
 
 		// Réinitialise la grille à la grille d'origine (Pas demandé dans
 		// description du travail noté)
@@ -84,5 +79,4 @@ public class tn4 {
 				.println("*********************************************************************************");
 		sudoku9x9.imprimerGrille();
 	}
-
 }

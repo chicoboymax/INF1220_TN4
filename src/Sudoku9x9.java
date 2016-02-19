@@ -7,6 +7,11 @@
 import java.util.BitSet;
 
 public class Sudoku9x9 extends Sudoku {
+	
+	// Taille du sudoku 9x9
+	private static final int TAILLE = 9;
+	// Nom du sudoku
+	private static final String NOM_SUDOKU = "Sudoku 81 Cases";
 
 	/*********************************************************************************/
 	/*
@@ -25,7 +30,7 @@ public class Sudoku9x9 extends Sudoku {
 	/*********************************************************************************/
 
 	public Sudoku9x9(int lesPlacements, int laComplexite) {
-		super(9, lesPlacements, laComplexite);
+		super(TAILLE, lesPlacements, laComplexite);
 	}
 
 	/*********************************************************************************/
@@ -38,23 +43,21 @@ public class Sudoku9x9 extends Sudoku {
 	 * @return boolean - Si la grille est valide ou non
 	 */
 	/*********************************************************************************/
-
-	// Override la méthode abstract 'validate' de la superclasse 'Sudoku'
 	@Override
 	public boolean validate() {
 		// Vérifie les lignes et les colonnes
-		for (int i = 0; i < grille.length; i++) {
+		for (int row = 0; row < grille.length; row++) {
 			BitSet bsRow = new BitSet(9);
 			BitSet bsColumn = new BitSet(9);
-			for (int j = 0; j < grille[i].length; j++) {
-				if (grille[i][j] == 0 || grille[j][i] == 0)
+			for (int col = 0; col < grille[row].length; col++) {
+				if (grille[row][col] == 0 || grille[col][row] == 0)
 					continue;
-				if (bsRow.get(grille[i][j] - 1)
-						|| bsColumn.get(grille[j][i] - 1))
+				if (bsRow.get(grille[row][col] - 1)
+						|| bsColumn.get(grille[col][row] - 1))
 					return false;
 				else {
-					bsRow.set(grille[i][j] - 1);
-					bsColumn.set(grille[j][i] - 1);
+					bsRow.set(grille[row][col] - 1);
+					bsColumn.set(grille[col][row] - 1);
 				}
 			}
 		}
@@ -76,6 +79,17 @@ public class Sudoku9x9 extends Sudoku {
 			}
 		}
 		return true;
+	}
+
+	/*********************************************************************************/
+	/*
+	 * Getter pour le nom du Sudoku
+	 * 
+	 * @return NOM_SUDOKU - Le nom du sudoku
+	 */
+	/********************************************************************************/
+	public static String getNom() {
+		return NOM_SUDOKU;
 	}
 
 }

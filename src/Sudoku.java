@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public abstract class Sudoku {
 	// Matrice de nombre entier représentant la grille de Sudoku
-	protected final int[][] grille;
+	protected int[][] grille;
 	// Une liste d’action de placement
 	private ArrayList<Case> historiquePlacements = new ArrayList<>();
 	// La taille du jeu
@@ -167,6 +167,21 @@ public abstract class Sudoku {
 	 */
 	/********************************************************************************/
 	protected abstract boolean validate();
+
+	/*********************************************************************************/
+	/*
+	 * Méthode pour afficher si la grille est valide ou non, elle appelle la
+	 * méthode validate(). Protected, car seulement disponible pour les sous-classes.
+	 */
+	/********************************************************************************/
+	protected void validateGrid() {
+		if (validate()) {
+			System.out.println("La grille est valide !\n");
+		} else {
+			System.out.println("La grille est invalide !\n");
+		}
+		;
+	};
 
 	/*********************************************************************************/
 	/*
