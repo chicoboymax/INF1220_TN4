@@ -1,13 +1,22 @@
 /**
- * Nom du programme : TN4 Fichier : Case.java
+ * Nom du programme : TN4 
+ * Fichier : Case.java
  * 
  * @author Maxime Drouin
  */
 
 public class Case {
+	// Variable pour la ligne de la case dans le sudoku. private car getter et
+	// setter associé.
 	private int row;
+	// Variable pour la colonne de la case dans le sudoku. private car getter et
+	// setter associé.
 	private int col;
+	// Variable pour sauvegarder l'ancienne valeur de la case. private car
+	// getter et setter associé.
 	private int ancValeur;
+	// Variable pour indiquer la nouvelle valeur de la case. private car getter
+	// et setter associé.
 	private int nouValeur;
 
 	/*********************************************************************************/
