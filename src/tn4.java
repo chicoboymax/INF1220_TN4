@@ -1,5 +1,6 @@
 /**
- * Nom du programme : TN4 Fichier : TN4.java
+ * Nom du programme : TN4 
+ * Fichier : TN4.java
  * 
  * @author Maxime Drouin
  */

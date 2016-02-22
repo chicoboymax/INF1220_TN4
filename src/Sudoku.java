@@ -7,15 +7,19 @@
 import java.util.ArrayList;
 
 public abstract class Sudoku {
-	// Matrice de nombre entier représentant la grille de Sudoku
+	// Matrice de nombre entier représentant la grille de Sudoku, protected, car
+	// seulement utilisée par les sous-classes
 	protected int[][] grille;
-	// Une liste d’action de placement
+	// Une liste d’action de placement private, car toujours utilisée par une
+	// méthode qui elles sont protected.
 	private ArrayList<Case> historiquePlacements = new ArrayList<>();
-	// La taille du jeu
+	// La taille du jeu. Private, car getter et setter associés
 	private int taille;
-	// Le degré de complexité de la grille
+	// Le degré de complexité de la grille. Private, car getter et setter
+	// associés
 	private int complexite;
-	// Attribut indiquant le nombre de chiffre restant à placer dans la grille
+	// Attribut indiquant le nombre de chiffre restant à placer dans la grille.
+	// Private, car getter et setter associés
 	private int placements;
 
 	/*********************************************************************************/
@@ -64,13 +68,20 @@ public abstract class Sudoku {
 	 */
 	/*********************************************************************************/
 	protected void reInitialiser() {
+		// Pour tous les éléments de l'ArrayList
 		for (int i = this.historiquePlacements.size(); i > 0; i--) {
+			// une case correspondant au placement - i
 			Case placement = this.historiquePlacements
 					.get(this.historiquePlacements.size() - i);
+			// Va chercher les valeurs sauvegardées dans pour données de lignes
+			// et colonnes
 			int row = placement.getRow();
 			int col = placement.getCol();
+			// Va chercher l'ancienne valeur de la case
 			int ancValeur = placement.getAncValeur();
+			// Remet l'ancienne valeur dans la grille à cet emplacement
 			this.grille[row][col] = ancValeur;
+			// Efface ce placement de l'ArrayList
 			this.historiquePlacements.remove(this.historiquePlacements.size()
 					- i);
 		}
@@ -88,12 +99,19 @@ public abstract class Sudoku {
 	 */
 	/*********************************************************************************/
 	protected void fairePlacement(int row, int col, int valeur) {
+		// Vérifie la taille de la grille
 		int taille = this.getTaille();
+		// Si le placement ne correspond pas à une valeur de la grille, affiche
+		// un message d'erreur
 		if (row >= taille || col >= taille) {
 			System.out.println("Case invalide");
 		} else {
+			// Autrement créer une instance de case et place sa valeur dans
+			// l'ArrayList historiquePlacements
 			Case placement = new Case(row, col, this.grille[row][col], valeur);
 			this.historiquePlacements.add(placement);
+			// Change la valeur de la grille à cet emplacement pour la nouvelle
+			// valeur
 			this.grille[row][col] = valeur;
 		}
 
@@ -107,12 +125,18 @@ public abstract class Sudoku {
 	 */
 	/********************************************************************************/
 	protected void annulerPlacement() {
+		// une case correspondant au dernier placement effectué
 		Case placement = this.historiquePlacements
 				.get(this.historiquePlacements.size() - 1);
+		// Va chercher les valeurs sauvegardées dans pour données de lignes et
+		// colonnes
 		int row = placement.getRow();
 		int col = placement.getCol();
+		// Va chercher l'ancienne valeur de la case
 		int ancValeur = placement.getAncValeur();
+		// Remet l'ancienne valeur dans la grille à cet emplacement
 		this.grille[row][col] = ancValeur;
+		// Efface ce placement de l'ArrayList
 		this.historiquePlacements.remove(this.historiquePlacements.size() - 1);
 	}
 
@@ -127,6 +151,7 @@ public abstract class Sudoku {
 	protected void imprimerGrille() {
 		String temp = "";
 		for (int row = 0; row < grille.length; row++) {
+			// À la fin de chaque ligne effectue un changement de ligne
 			temp += " \n ";
 			for (int col = 0; col < grille[row].length; col++) {
 				temp += " " + Integer.toString(grille[row][col]);
@@ -148,6 +173,8 @@ public abstract class Sudoku {
 	protected int calculerPlacements() {
 		for (int row = 0; row < grille.length; row++) {
 			for (int col = 0; col < grille[row].length; col++) {
+				// Pour toutes les cases de la grille, vérifie si la valeur est
+				// '0' si oui incrémente placements de 1
 				if (grille[row][col] == 0) {
 					placements++;
 				}
@@ -171,10 +198,13 @@ public abstract class Sudoku {
 	/*********************************************************************************/
 	/*
 	 * Méthode pour afficher si la grille est valide ou non, elle appelle la
-	 * méthode validate(). Protected, car seulement disponible pour les sous-classes.
+	 * méthode validate(). Protected, car seulement disponible pour les
+	 * sous-classes.
 	 */
 	/********************************************************************************/
 	protected void validateGrid() {
+		// Appelle validate() et affiche un message correspondant à la valeur
+		// retournée
 		if (validate()) {
 			System.out.println("La grille est valide !\n");
 		} else {

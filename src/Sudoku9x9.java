@@ -7,11 +7,15 @@
 import java.util.BitSet;
 
 public class Sudoku9x9 extends Sudoku {
-	
-	// Taille du sudoku 9x9
-	private static final int TAILLE = 9;
-	// Nom du sudoku
-	private static final String NOM_SUDOKU = "Sudoku 81 Cases";
+
+	// Taille du sudoku 9x9, constante, car sera toujours la même chose pour ce
+	// type de grille. static, car variable de classe et non d'instance. Public,
+	// car ne peut pas être changée par la suite de tout façon.
+	public static final int TAILLE_9X9 = 9;
+	// Nom du sudoku, constante, car sera toujours la même chose pour ce type de
+	// grille. static, car variable de classe et non d'instance.Public, car ne
+	// peut pas être changée par la suite de tout façon.
+	public static final String NOM_SUDOKU = "Sudoku 81 Cases";
 
 	/*********************************************************************************/
 	/*
@@ -30,7 +34,9 @@ public class Sudoku9x9 extends Sudoku {
 	/*********************************************************************************/
 
 	public Sudoku9x9(int lesPlacements, int laComplexite) {
-		super(TAILLE, lesPlacements, laComplexite);
+		// Utilise le constructeur de la superclasse et lui passe comme
+		// paramètre de taille la constante TAILLE_9X9
+		super(TAILLE_9X9, lesPlacements, laComplexite);
 	}
 
 	/*********************************************************************************/
@@ -43,6 +49,7 @@ public class Sudoku9x9 extends Sudoku {
 	 * @return boolean - Si la grille est valide ou non
 	 */
 	/*********************************************************************************/
+	// La méthode override la méthode validate() de la superclasse
 	@Override
 	public boolean validate() {
 		// Vérifie les lignes et les colonnes
@@ -79,17 +86,6 @@ public class Sudoku9x9 extends Sudoku {
 			}
 		}
 		return true;
-	}
-
-	/*********************************************************************************/
-	/*
-	 * Getter pour le nom du Sudoku
-	 * 
-	 * @return NOM_SUDOKU - Le nom du sudoku
-	 */
-	/********************************************************************************/
-	public static String getNom() {
-		return NOM_SUDOKU;
 	}
 
 }
