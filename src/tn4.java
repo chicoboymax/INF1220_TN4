@@ -25,7 +25,7 @@ public class tn4 {
 		System.out.println("** Complexité **");
 		System.out
 				.println("*********************************************************************************");
-		System.out.println(sudoku9x9.getComplexite());
+		sudoku9x9.printComplexite();
 
 		// Effectuer 10 placements
 

@@ -227,6 +227,22 @@ public abstract class Sudoku {
 
 	/*********************************************************************************/
 	/*
+	 * Méthode pour imprimer la complexité dans la console
+	 */
+	/********************************************************************************/
+	protected void printComplexite() {
+		int complexite = getComplexite();
+		if (complexite == 0) {
+			System.out.println("Débutant");
+		} else if (complexite == 1) {
+			System.out.println("Intermédiaire");
+		} else {
+			System.out.println("Expert");
+		}
+	}
+
+	/*********************************************************************************/
+	/*
 	 * Setter pour la complexite Protected, car utilisée seulement par les
 	 * sous-classes.
 	 * 
